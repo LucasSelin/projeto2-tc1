@@ -5,6 +5,7 @@ import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.origem.TestHome.Home;
+import org.origem.testCadastro.Cadastro;
 
 import java.time.Duration;
 
@@ -14,6 +15,7 @@ public class SeleniumTest {
     private WebDriver driver;
 
     private Home home;
+    private Cadastro cadastro;
 
     @BeforeEach
     void setUp() {
@@ -23,6 +25,7 @@ public class SeleniumTest {
         driver.get("https://devhub.dev.br/");
 
        home = new Home(driver);
+       cadastro = new Cadastro(driver);
     }
 
 
@@ -47,4 +50,6 @@ public class SeleniumTest {
         String currentUrl = driver.getCurrentUrl();
         Assertions.assertTrue(driver.getTitle().contains("DevHub"));
     }
+
+
 }
