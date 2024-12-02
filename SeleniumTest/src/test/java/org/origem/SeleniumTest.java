@@ -77,8 +77,8 @@ public class SeleniumTest {
 
     }
     @Test
-    @DisplayName("Testa cadastrar pessoa")
-    public void testarAdicionarPessoa() throws InterruptedException {
+    @DisplayName("Testa Click no botão adicionar")
+    public void DeveClicarNoBataoAdiciona() throws InterruptedException {
         cadastro.cadastrarPessoas();
         cadastro.ClickVoltar();
         cadastro.clickBataoAdicionar();
@@ -115,6 +115,12 @@ public class SeleniumTest {
         cadastro.clickBataoAdicionar();
         cadastro.botaoCancelarDoEmail();
         cadastro.botaoCancelarDoTelefone();
+    }
+
+    @Test
+    @DisplayName("Deve encontrar e clicar no link sair")
+    void DeveClicarLinkSair()throws InterruptedException{
+        home.ClicBotaokSair();
     }
 
 
