@@ -103,4 +103,17 @@ public class Cadastro {
 
 
     }
+
+    public  void clicarNoBotãoEditar() throws InterruptedException {
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+
+        WebElement editButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[contains(@onclick, 'editarPessoa')]")));
+
+        editButton.click();
+
+        wait.until(ExpectedConditions.urlContains("editar"));
+
+        Assertions.assertTrue(driver.getCurrentUrl().contains("editar"), "O redirecionamento para a página de edição falhou.");
+    }
 }
