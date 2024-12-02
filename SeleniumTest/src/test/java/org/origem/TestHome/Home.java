@@ -45,6 +45,12 @@ public class Home {
             throw new IllegalStateException("A notificação não foi exibida após o cadastro.");
         }
     }
+     public void ClicBotaokSair() {
+         WebElement sairLink = driver.findElement(By.linkText("Sair"));
+         Assertions.assertTrue(sairLink.isDisplayed());
+         sairLink.click();
 
-
+         // Aguardar para verificar se o redirecionamento ocorreu
+         Assertions.assertTrue(driver.getCurrentUrl().contains("login"));
+     }
 }
