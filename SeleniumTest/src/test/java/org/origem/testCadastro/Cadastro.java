@@ -80,4 +80,27 @@ public class Cadastro {
         Thread.sleep(20000);
 
     }
+    public void cadastrarTelefone() throws InterruptedException {
+
+        WebElement botaoFone = driver.findElement(By.cssSelector("button[onclick='mostrarContainer2()']"));
+
+        Assertions.assertTrue(botaoFone.isDisplayed(), "O botão '+ Email' não está visível na página.");
+
+        botaoFone.click();
+
+        driver.findElement(By.id("iTelefone")).sendKeys("169999-99999");
+
+
+        WebElement botaoCadastrar = driver.findElement(By.xpath("//button[text()='Cadastrar']"));
+
+
+        Assertions.assertTrue(botaoCadastrar.isDisplayed(), "O não clicou no botão para cadastrar fone.");
+
+
+        botaoCadastrar.click();
+
+        Thread.sleep(20000);
+
+
+    }
 }
