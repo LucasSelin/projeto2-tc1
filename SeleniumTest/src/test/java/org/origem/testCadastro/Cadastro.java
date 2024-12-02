@@ -133,4 +133,13 @@ public class Cadastro {
 
         Assertions.assertTrue(driver.getCurrentUrl().contains("editar"), "O redirecionamento para a página de edição falhou.");
     }
+
+    public void excluirTelefone() throws InterruptedException {
+
+        WebElement botaoFone = driver.findElement(By.cssSelector("button[onclick='excluirTelefone']"));
+        botaoFone.click();
+
+        Assertions.assertTrue(botaoFone.isDisplayed(), "O botão de excluir telefone não está visível.");
+        Thread.sleep(20000);
+    }
 }

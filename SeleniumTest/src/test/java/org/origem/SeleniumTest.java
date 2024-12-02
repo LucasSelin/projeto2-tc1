@@ -2,7 +2,9 @@ package org.origem;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.*;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.origem.TestHome.Home;
 import org.origem.testCadastro.Cadastro;
@@ -95,4 +97,8 @@ public class SeleniumTest {
 
 
     }
+
+
+
+
 }
