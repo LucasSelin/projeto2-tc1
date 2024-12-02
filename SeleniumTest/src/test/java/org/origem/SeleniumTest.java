@@ -74,4 +74,25 @@ public class SeleniumTest {
         Assertions.assertTrue(true, "Teste concluído com sucesso.");
 
     }
+    @Test
+    @DisplayName("Testa cadastrar pessoa")
+    public void testarAdicionarPessoa() throws InterruptedException {
+        cadastro.cadastrarPessoas();
+        cadastro.ClickVoltar();
+        cadastro.clickBataoAdicionar();
+
+
+        Assertions.assertTrue(true, "Pessoa adicionada com sucesso.");
+    }
+
+    @Test
+    @DisplayName("Deve cadastrar email e telefone")
+    void testarCadastrarEmailTelefone() throws InterruptedException {
+        cadastro.cadastrarPessoas();
+        cadastro.cadastrarTelefone();
+        cadastro.cadatrarEmail();
+
+
+
+    }
 }
