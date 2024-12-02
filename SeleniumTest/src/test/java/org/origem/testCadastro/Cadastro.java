@@ -1,5 +1,6 @@
 package org.origem.testCadastro;
 
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -45,5 +46,16 @@ public class Cadastro {
             throw new IllegalStateException("A notificação não foi exibida após o cadastro.");
         }
         //Thread.sleep(2000);
+    }
+
+    public void ClickVoltar() throws InterruptedException {
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement voltarLink = wait.until(ExpectedConditions.elementToBeClickable(By.className("voltar")));
+
+        voltarLink.click();
+
+        Assertions.assertTrue(driver.getCurrentUrl().contains("index.html"), "O redirecionamento para a página inicial falhou.");
+
     }
 }
