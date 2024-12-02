@@ -74,6 +74,7 @@ public class AddAdressIncorrectTestTest {
     }
     {
       List<WebElement> elements = driver.findElements(By.xpath("//li[contains(.,\'emailincorreto!@#%!%%$#@%¨#$%\')]"));
+
       assert(elements.size() == 0);
     }
   }
