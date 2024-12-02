@@ -77,9 +77,26 @@ public class Cadastro {
         Assertions.assertTrue(botaoCadastrar.isDisplayed(), "O botão 'Cadastrar' não está visível na página.");
 
         botaoCadastrar.click();
-        Thread.sleep(20000);
+        Thread.sleep(10000);
 
     }
+
+    public void botaoCancelarDoEmail() throws InterruptedException {
+
+        WebElement formCadastrarEmailPessoa = driver.findElement(By.id("formCadastrarEmailPessoa"));
+        WebElement botaoEmail = driver.findElement(By.cssSelector("button[onclick='mostrarContainer()']"));
+
+        Assertions.assertTrue(botaoEmail.isDisplayed(), "O botão '+ Email' não está visível na página.");
+
+        botaoEmail.click();
+
+        WebElement botaoCancelar = driver.findElement(By.cssSelector("button[onclick='esconderContainer()']"));
+        botaoCancelar.click();
+
+
+    }
+
+
     public void cadastrarTelefone() throws InterruptedException {
 
         WebElement botaoFone = driver.findElement(By.cssSelector("button[onclick='mostrarContainer2()']"));
