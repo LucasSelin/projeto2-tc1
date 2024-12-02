@@ -98,7 +98,16 @@ public class SeleniumTest {
 
     }
 
+    @Test
+    @DisplayName("Deve excluir email e telefone")
+    void excluirEmailTelefone() throws InterruptedException {
+        cadastro.clickBataoAdicionar();
+        cadastro.cadatrarEmail();
+        cadastro.excluirEmaill();
+        cadastro.cadastrarTelefone();
+        cadastro.excluirTelefone();
 
+    }
 
 
 
