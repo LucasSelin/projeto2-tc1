@@ -52,13 +52,26 @@ public class SeleniumTest {
     }
 
     @Test
-    @DisplayName("Deve cadastrar e editar")
-    public void testeCadastrarEeditar() throws InterruptedException {
+    @DisplayName("Deve clicar no botão cadastrar ,voltar e editar")
+    public void testeClickBotaoCadastrarVoltarEditar() throws InterruptedException {
         cadastro.cadastrarPessoas();
         cadastro.ClickVoltar();
         cadastro.clicarNoBotãoEditar();
 
 
         Assertions.assertTrue(true, "Pessoa adicionada com sucesso.");
+    }
+
+    @Test
+    @DisplayName("Deve pesquisar por cpf")
+    public void pesquisarCpf() throws InterruptedException {
+
+        cadastro.cadastrarPessoas();
+        cadastro.ClickVoltar();
+        home.insereCpfPesquisa();
+
+
+        Assertions.assertTrue(true, "Teste concluído com sucesso.");
+
     }
 }

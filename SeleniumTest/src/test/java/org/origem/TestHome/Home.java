@@ -1,5 +1,8 @@
 package org.origem.TestHome;
 
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -33,7 +36,6 @@ public class Home {
         WebElement botao = driver.findElement(By.tagName("button"));
         botao.click();
 
-        // Localiza a imagem dentro do botão
         WebElement imagem = botao.findElement(By.tagName("img"));
 
         WebElement notificacao = new WebDriverWait(driver, Duration.ofSeconds(10))
@@ -43,4 +45,6 @@ public class Home {
             throw new IllegalStateException("A notificação não foi exibida após o cadastro.");
         }
     }
+
+
 }
