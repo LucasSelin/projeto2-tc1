@@ -140,6 +140,19 @@ public class Cadastro {
         botaoFone.click();
 
         Assertions.assertTrue(botaoFone.isDisplayed(), "O botão de excluir telefone não está visível.");
-        Thread.sleep(20000);
+
     }
+
+    public void excluirEmaill() throws InterruptedException {
+
+        WebElement botaoLixeira = driver.findElement(By.cssSelector("img[src='./img/lixeira-de-reciclagem.png']"));
+
+        Assertions.assertTrue(botaoLixeira.isDisplayed(), "O botão de excluir email não está visível.");
+
+        botaoLixeira.click();
+
+       // Thread.sleep(2000); // Substituir por espera explícita se possível
+    }
+
+
 }
