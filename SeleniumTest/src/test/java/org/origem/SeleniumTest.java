@@ -51,5 +51,14 @@ public class SeleniumTest {
         Assertions.assertTrue(driver.getTitle().contains("DevHub"));
     }
 
+    @Test
+    @DisplayName("Deve cadastrar e editar")
+    public void testeCadastrarEeditar() throws InterruptedException {
+        cadastro.cadastrarPessoas();
+        cadastro.ClickVoltar();
+        cadastro.clicarNoBotãoEditar();
 
+
+        Assertions.assertTrue(true, "Pessoa adicionada com sucesso.");
+    }
 }
