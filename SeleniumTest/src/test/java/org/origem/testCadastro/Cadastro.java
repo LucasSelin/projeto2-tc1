@@ -97,6 +97,18 @@ public class Cadastro {
 
 
     }
+    public void botaoCancelarDoTelefone() throws InterruptedException {
+
+        WebElement botaoFone = driver.findElement(By.cssSelector("button[onclick='mostrarContainer2()']"));
+
+        Assertions.assertTrue(botaoFone.isDisplayed(), "O botão telefone não está visível na página.");
+
+        botaoFone.click();
+        WebElement botaoCancelar = driver.findElement(By.cssSelector("button[onclick='esconderContainer2()']"));
+        botaoCancelar.click();
+       // Thread.sleep(5000);
+
+    }
 
     public void cadastrarTelefone() throws InterruptedException {
 
@@ -108,16 +120,13 @@ public class Cadastro {
 
         driver.findElement(By.id("iTelefone")).sendKeys("169999-99999");
 
-
         WebElement botaoCadastrar = driver.findElement(By.xpath("//button[text()='Cadastrar']"));
-
 
         Assertions.assertTrue(botaoCadastrar.isDisplayed(), "O não clicou no botão para cadastrar fone.");
 
-
         botaoCadastrar.click();
 
-        Thread.sleep(20000);
+        //Thread.sleep(5000);
 
 
     }
