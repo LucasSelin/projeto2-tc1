@@ -109,6 +109,13 @@ public class SeleniumTest {
 
     }
 
+    @Test
+    @DisplayName("Deve clicar no botao cancelar do email")
+    void clicarNoBotaoCancelaDoEmail() throws InterruptedException {
+        cadastro.clickBataoAdicionar();
+        cadastro.botaoCancelarDoEmail();
+    }
+
 
 
 

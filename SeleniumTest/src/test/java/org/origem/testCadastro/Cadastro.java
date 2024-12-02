@@ -1,6 +1,8 @@
 package org.origem.testCadastro;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -96,7 +98,6 @@ public class Cadastro {
 
     }
 
-
     public void cadastrarTelefone() throws InterruptedException {
 
         WebElement botaoFone = driver.findElement(By.cssSelector("button[onclick='mostrarContainer2()']"));
@@ -153,6 +154,7 @@ public class Cadastro {
 
        // Thread.sleep(2000); // Substituir por espera explícita se possível
     }
+
 
 
 }
