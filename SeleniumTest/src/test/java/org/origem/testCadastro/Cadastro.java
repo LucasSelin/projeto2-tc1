@@ -58,4 +58,26 @@ public class Cadastro {
         Assertions.assertTrue(driver.getCurrentUrl().contains("index.html"), "O redirecionamento para a página inicial falhou.");
 
     }
+    public void cadatrarEmail() throws InterruptedException {
+
+        WebElement botaoEmail = driver.findElement(By.cssSelector("button[onclick='mostrarContainer()']"));
+
+        Assertions.assertTrue(botaoEmail.isDisplayed(), "O botão '+ Email' não está visível na página.");
+
+        botaoEmail.click();
+
+        driver.findElement(By.id("iEmail")).sendKeys("teste@gmail.com");
+
+        WebElement botaoCadastrar = driver.findElement(By.xpath("//button[text()='Cadastrar']"));
+
+
+
+
+
+        Assertions.assertTrue(botaoCadastrar.isDisplayed(), "O botão 'Cadastrar' não está visível na página.");
+
+        botaoCadastrar.click();
+        Thread.sleep(20000);
+
+    }
 }

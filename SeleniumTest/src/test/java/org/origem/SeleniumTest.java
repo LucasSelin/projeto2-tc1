@@ -37,7 +37,7 @@ public class SeleniumTest {
     }
 
     @Test
-    @DisplayName("Deve abrir e fechar o navegafor")
+    @DisplayName("Deve abrir e fechar o navegador")
     public void AbreNavegador(){
       driver.get("https://devhub.dev.br/");
     }
