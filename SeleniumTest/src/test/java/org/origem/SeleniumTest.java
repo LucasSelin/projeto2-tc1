@@ -1,10 +1,7 @@
 package org.origem;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.origem.TestHome.Home;
@@ -40,5 +37,14 @@ public class SeleniumTest {
     @DisplayName("Deve abrir e fechar o navegador")
     public void AbreNavegador(){
       driver.get("https://devhub.dev.br/");
+    }
+
+    @Test
+    @DisplayName("Deve abrir a página e verificar o título")
+    void verificarTítulo(){
+        driver.get("https://devhub.dev.br/");
+        System.out.println("ok");
+        String currentUrl = driver.getCurrentUrl();
+        Assertions.assertTrue(driver.getTitle().contains("DevHub"));
     }
 }
