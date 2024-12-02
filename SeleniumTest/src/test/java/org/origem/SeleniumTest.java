@@ -110,10 +110,11 @@ public class SeleniumTest {
     }
 
     @Test
-    @DisplayName("Deve clicar no botao cancelar do email")
+    @DisplayName("Deve clicar no botao cancelar do email e telefone")
     void clicarNoBotaoCancelaDoEmail() throws InterruptedException {
         cadastro.clickBataoAdicionar();
         cadastro.botaoCancelarDoEmail();
+        cadastro.botaoCancelarDoTelefone();
     }
 
 
