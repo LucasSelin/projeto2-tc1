@@ -123,6 +123,14 @@ public class SeleniumTest {
         home.ClicBotaokSair();
     }
 
+    @Test
+    @DisplayName("Excluir cadastro")
+    void DeveExcluirCadastro()throws InterruptedException{
+        cadastro.cadastrarPessoas();
+        cadastro.ClickVoltar();
+        home.ExcluirCadastro();
+    }
+
 
 
 

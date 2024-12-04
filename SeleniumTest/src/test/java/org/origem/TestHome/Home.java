@@ -55,10 +55,12 @@ public class Home {
      }
 
      public void ExcluirCadastro() {
-        WebElement deletarCadastro = driver.findElement(By.cssSelector("Button[onclick ='removerPessoa)']"));
-        deletarCadastro.click();
-        WebElement noteficado = driver.findElement(By.className("noteficado"));
-        Assertions.assertTrue(noteficado.isDisplayed());
+       // WebElement deletarCadastro = driver.findElement(By.cssSelector("button[onclick='removerPessoa(444.444.444-44)']\n"));
+         WebElement deletarBotao = driver.findElement(By.cssSelector("img[alt='Lixeira - deletar']"));
+         deletarBotao.click();
+
+         WebElement notificacao = driver.findElement(By.className("notificacao"));
+        Assertions.assertTrue(notificacao.isDisplayed());
 
 
      }
