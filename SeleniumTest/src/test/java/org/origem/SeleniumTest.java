@@ -76,14 +76,14 @@ public class SeleniumTest {
     }
     
     @Test
-<<<<<<< HEAD
-    @DisplayName("Testa Click no botão adicionar")
-    public void DeveClicarNoBataoAdiciona() throws InterruptedException {
-=======
+
+
+
+
     @DisplayName("Testa cadastrar pessoa")
     public void testarAdicionarPessoa() throws InterruptedException 
     {
->>>>>>> 79823ba5f19c9f4bcc90acb26f145928b45f1e04
+
         cadastro.cadastrarPessoas();
         cadastro.ClickVoltar();
         cadastro.clickBataoAdicionar();
@@ -119,7 +119,8 @@ public class SeleniumTest {
         cadastro.botaoCancelarDoEmail();
         cadastro.botaoCancelarDoTelefone();
     }
-<<<<<<< HEAD
+
+
 
     @Test
     @DisplayName("Deve encontrar e clicar no link sair")
@@ -138,6 +139,4 @@ public class SeleniumTest {
 
 
 
-=======
->>>>>>> 79823ba5f19c9f4bcc90acb26f145928b45f1e04
 }
