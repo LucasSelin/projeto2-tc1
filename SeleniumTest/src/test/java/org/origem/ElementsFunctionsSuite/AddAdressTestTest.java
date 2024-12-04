@@ -106,7 +106,7 @@ public class AddAdressTestTest
       Actions builder = new Actions(driver);
       builder.moveToElement(element).release().perform();
     }
-    
+
     {
       List<WebElement> elements = driver.findElements(By.xpath("//td[contains(.,\'email@certinho\')]"));
       assert(elements.size() > 0);

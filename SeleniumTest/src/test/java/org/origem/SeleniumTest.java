@@ -24,8 +24,8 @@ public class SeleniumTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get("https://devhub.dev.br/");
 
-       home = new Home(driver);
-       cadastro = new Cadastro(driver);
+        home = new Home(driver);
+        cadastro = new Cadastro(driver);
     }
 
     @AfterEach
