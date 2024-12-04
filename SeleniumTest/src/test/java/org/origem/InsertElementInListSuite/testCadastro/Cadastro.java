@@ -1,4 +1,4 @@
-package org.origem.testCadastro;
+package SeleniumTest.src.test.java.org.origem.InsertElementInListSuite.testCadastro;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
