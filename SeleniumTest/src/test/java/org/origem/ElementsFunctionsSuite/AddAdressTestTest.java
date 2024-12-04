@@ -1,6 +1,7 @@
 import org.junit.Test;
 import org.junit.Before;
 import org.junit.After;
+
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.core.IsNot.not;
@@ -21,39 +22,51 @@ import org.openqa.selenium.Keys;
 import java.util.*;
 import java.net.MalformedURLException;
 import java.net.URL;
-public class AddAdressTestTest {
+
+public class AddAdressTestTest 
+{
   private WebDriver driver;
   private Map<String, Object> vars;
   JavascriptExecutor js;
+
   @Before
-  public void setUp() {
+  public void setUp() 
+  {
     driver = new ChromeDriver();
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
   }
+
   @After
-  public void tearDown() {
+  public void tearDown() 
+  {
     driver.quit();
   }
+
   @Test
-  public void addAdressTest() {
+  public void addAdressTest() 
+  {
     driver.get("http://devhub.dev.br/");
     driver.manage().window().setSize(new Dimension(1360, 530));
+
     {
       WebElement element = driver.findElement(By.cssSelector(".tabelaListagem"));
       Actions builder = new Actions(driver);
       builder.moveToElement(element).clickAndHold().perform();
     }
+
     {
       WebElement element = driver.findElement(By.cssSelector(".tabelaListagem"));
       Actions builder = new Actions(driver);
       builder.moveToElement(element).perform();
     }
+
     {
       WebElement element = driver.findElement(By.cssSelector(".tabelaListagem"));
       Actions builder = new Actions(driver);
       builder.moveToElement(element).release().perform();
     }
+
     driver.findElement(By.xpath("//img[@alt=\'Lapis - edicao\']")).click();
     driver.findElement(By.cssSelector("div:nth-child(15) > button")).click();
     driver.findElement(By.cssSelector("#formCadastrarEmailPessoa > label")).click();
@@ -61,32 +74,39 @@ public class AddAdressTestTest {
     driver.findElement(By.id("iEmail")).sendKeys("email@certinho");
     driver.findElement(By.cssSelector("#formCadastrarEmailPessoa button:nth-child(2)")).click();
     driver.findElement(By.id("cadastrarPessoa")).click();
+
     {
       WebElement element = driver.findElement(By.id("cadastrarPessoa"));
       Actions builder = new Actions(driver);
       builder.moveToElement(element).perform();
     }
+
     {
       WebElement element = driver.findElement(By.tagName("body"));
       Actions builder = new Actions(driver);
       builder.moveToElement(element, 0, 0).perform();
     }
+
     driver.findElement(By.cssSelector("header")).click();
+
     {
       WebElement element = driver.findElement(By.cssSelector(".tabelaListagem"));
       Actions builder = new Actions(driver);
       builder.moveToElement(element).clickAndHold().perform();
     }
+
     {
       WebElement element = driver.findElement(By.cssSelector(".tabelaListagem"));
       Actions builder = new Actions(driver);
       builder.moveToElement(element).perform();
     }
+
     {
       WebElement element = driver.findElement(By.cssSelector(".tabelaListagem"));
       Actions builder = new Actions(driver);
       builder.moveToElement(element).release().perform();
     }
+    
     {
       List<WebElement> elements = driver.findElements(By.xpath("//td[contains(.,\'email@certinho\')]"));
       assert(elements.size() > 0);

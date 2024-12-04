@@ -21,39 +21,51 @@ import org.openqa.selenium.Keys;
 import java.util.*;
 import java.net.MalformedURLException;
 import java.net.URL;
-public class AddIncorretTelefonesTestsTest {
+
+public class AddIncorretTelefonesTestsTest 
+{
   private WebDriver driver;
   private Map<String, Object> vars;
   JavascriptExecutor js;
+
   @Before
-  public void setUp() {
+  public void setUp() 
+  {
     driver = new ChromeDriver();
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
   }
+
   @After
-  public void tearDown() {
+  public void tearDown() 
+  {
     driver.quit();
   }
+
   @Test
-  public void addIncorretTelefonesTests() {
+  public void addIncorretTelefonesTests() 
+  {
     driver.get("http://devhub.dev.br/");
     driver.manage().window().setSize(new Dimension(1360, 530));
+
     {
       WebElement element = driver.findElement(By.cssSelector(".tabelaListagem"));
       Actions builder = new Actions(driver);
       builder.moveToElement(element).clickAndHold().perform();
     }
+
     {
       WebElement element = driver.findElement(By.cssSelector(".tabelaListagem"));
       Actions builder = new Actions(driver);
       builder.moveToElement(element).perform();
     }
+
     {
       WebElement element = driver.findElement(By.cssSelector(".tabelaListagem"));
       Actions builder = new Actions(driver);
       builder.moveToElement(element).release().perform();
     }
+
     driver.findElement(By.xpath("//img[@alt=\'Lapis - edicao\']")).click();
     driver.findElement(By.cssSelector("div:nth-child(19) > button")).click();
     driver.findElement(By.id("iTelefone")).click();
@@ -63,10 +75,12 @@ public class AddIncorretTelefonesTestsTest {
     driver.findElement(By.id("iTelefone")).click();
     driver.findElement(By.id("iTelefone")).sendKeys("11111111111111111111111111111111111111111111111");
     driver.findElement(By.cssSelector("#formCadastrarTelefonePessoa button:nth-child(2)")).click();
+
     {
       List<WebElement> elements = driver.findElements(By.xpath("//li[contains(.,\'11111111111111111111111111111111111111111111111\')]"));
       assert(elements.size() == 0);
     }
+    
     {
       List<WebElement> elements = driver.findElements(By.cssSelector("#cadastroPessoaTelefones > li:nth-child(1)"));
       assert(elements.size() == 0);

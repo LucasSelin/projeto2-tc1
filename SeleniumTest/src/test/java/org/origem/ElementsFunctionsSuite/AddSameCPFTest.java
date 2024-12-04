@@ -11,25 +11,27 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class AddSameCPFTest {
+public class AddSameCPFTest 
+{
   private WebDriver driver;
 
   @Before
-  public void setUp() {
+  public void setUp() 
+  {
     driver = new ChromeDriver();
   }
 
   @After
-  public void tearDown() {
+  public void tearDown() 
+  {
     driver.quit();
   }
 
   @Test
-  public void addSameCPF() {
-
+  public void addSameCPF() 
+  {
     driver.get("https://devhub.dev.br/");
     driver.manage().window().setSize(new Dimension(1936, 1056));
-
 
     driver.findElement(By.linkText("+ Adicionar")).click();
     driver.findElement(By.id("iCpf")).sendKeys("510.664.638-32");
@@ -41,10 +43,8 @@ public class AddSameCPFTest {
     driver.findElement(By.id("iProfissao")).sendKeys("seila");
     driver.findElement(By.id("cadastrarPessoa")).click();
 
-
     WebDriverWait wait = new WebDriverWait(driver, 10);
     wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".success-message"))); // Substitua pelo seletor correto da mensagem de sucesso
-
 
     driver.findElement(By.linkText("+ Adicionar")).click();
     driver.findElement(By.id("iCpf")).sendKeys("510.664.638-32"); // CPF já cadastrado
@@ -55,7 +55,6 @@ public class AddSameCPFTest {
     driver.findElement(By.id("iDataNasc")).sendKeys("2000-01-01");
     driver.findElement(By.id("iProfissao")).sendKeys("outro");
     driver.findElement(By.id("cadastrarPessoa")).click();
-
 
     WebElement errorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".error-message"))); // Substitua pelo seletor correto da mensagem de erro
     assertNotNull("A mensagem de erro não foi exibida!", errorMessage);

@@ -10,21 +10,25 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class AddIncorrectEmailTest {
+public class AddIncorrectEmailTest 
+{
     private WebDriver driver;
 
     @Before
-    public void setUp() {
+    public void setUp() 
+    {
         driver = new ChromeDriver();
     }
 
     @After
-    public void tearDown() {
+    public void tearDown() 
+    {
         driver.quit();
     }
 
     @Test
-    public void addIncorrectEmail() {
+    public void addIncorrectEmail() 
+    {
 
         driver.get("https://devhub.dev.br/");
         driver.manage().window().setSize(new Dimension(1936, 1056));

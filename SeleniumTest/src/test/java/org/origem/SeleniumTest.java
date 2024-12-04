@@ -12,15 +12,13 @@ import org.origem.testCadastro.Cadastro;
 import java.time.Duration;
 
 public class SeleniumTest {
-
-
     private WebDriver driver;
-
     private Home home;
     private Cadastro cadastro;
 
     @BeforeEach
-    void setUp() {
+    void setUp() 
+    {
         WebDriverManager.firefoxdriver().setup();
         driver = new FirefoxDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -30,9 +28,9 @@ public class SeleniumTest {
        cadastro = new Cadastro(driver);
     }
 
-
     @AfterEach
-    void tearDown() {
+    void tearDown() 
+    {
         if (driver != null) {
             driver.quit();
         }
@@ -40,13 +38,15 @@ public class SeleniumTest {
 
     @Test
     @DisplayName("Deve abrir e fechar o navegador")
-    public void AbreNavegador(){
+    public void AbreNavegador()
+    {
       driver.get("https://devhub.dev.br/");
     }
 
     @Test
     @DisplayName("Deve abrir a página e verificar o título")
-    void verificarTítulo(){
+    void verificarTítulo()
+    {
         driver.get("https://devhub.dev.br/");
         System.out.println("ok");
         String currentUrl = driver.getCurrentUrl();
@@ -55,69 +55,63 @@ public class SeleniumTest {
 
     @Test
     @DisplayName("Deve clicar no botão cadastrar ,voltar e editar")
-    public void testeClickBotaoCadastrarVoltarEditar() throws InterruptedException {
+    public void testeClickBotaoCadastrarVoltarEditar() throws InterruptedException 
+    {
         cadastro.cadastrarPessoas();
         cadastro.ClickVoltar();
         cadastro.clicarNoBotãoEditar();
-
 
         Assertions.assertTrue(true, "Pessoa adicionada com sucesso.");
     }
 
     @Test
     @DisplayName("Deve pesquisar por cpf")
-    public void pesquisarCpf() throws InterruptedException {
-
+    public void pesquisarCpf() throws InterruptedException 
+    {
         cadastro.cadastrarPessoas();
         cadastro.ClickVoltar();
         home.insereCpfPesquisa();
 
-
         Assertions.assertTrue(true, "Teste concluído com sucesso.");
-
     }
+    
     @Test
     @DisplayName("Testa cadastrar pessoa")
-    public void testarAdicionarPessoa() throws InterruptedException {
+    public void testarAdicionarPessoa() throws InterruptedException 
+    {
         cadastro.cadastrarPessoas();
         cadastro.ClickVoltar();
         cadastro.clickBataoAdicionar();
-
 
         Assertions.assertTrue(true, "Pessoa adicionada com sucesso.");
     }
 
     @Test
     @DisplayName("Deve cadastrar email e telefone")
-    void testarCadastrarEmailTelefone() throws InterruptedException {
+    void testarCadastrarEmailTelefone() throws InterruptedException 
+    {
         cadastro.cadastrarPessoas();
         cadastro.cadastrarTelefone();
         cadastro.cadatrarEmail();
-
-
-
     }
 
     @Test
     @DisplayName("Deve excluir email e telefone")
-    void excluirEmailTelefone() throws InterruptedException {
+    void excluirEmailTelefone() throws InterruptedException 
+    {
         cadastro.clickBataoAdicionar();
         cadastro.cadatrarEmail();
         cadastro.excluirEmaill();
         cadastro.cadastrarTelefone();
         cadastro.excluirTelefone();
-
     }
 
     @Test
     @DisplayName("Deve clicar no botao cancelar do email e telefone")
-    void clicarNoBotaoCancelaDoEmail() throws InterruptedException {
+    void clicarNoBotaoCancelaDoEmail() throws InterruptedException 
+    {
         cadastro.clickBataoAdicionar();
         cadastro.botaoCancelarDoEmail();
         cadastro.botaoCancelarDoTelefone();
     }
-
-
-
-
 }

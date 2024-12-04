@@ -11,22 +11,25 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.Keys;
 
-public class SearchCPFUnified00000000000Test {
+public class SearchCPFUnified00000000000Test 
+{
     private WebDriver driver;
 
     @Before
-    public void setUp() {
+    public void setUp() 
+    {
         driver = new ChromeDriver();
     }
 
     @After
-    public void tearDown() {
+    public void tearDown() 
+    {
         driver.quit();
     }
 
     @Test
-    public void searchCPFUnified00000000000() {
-
+    public void searchCPFUnified00000000000() 
+    {
         driver.get("https://devhub.dev.br/");
         driver.manage().window().setSize(new Dimension(1936, 1056));
 
@@ -46,7 +49,6 @@ public class SearchCPFUnified00000000000Test {
         searchInput.clear();
         searchInput.sendKeys("510.664.638-32"); // CPF formatado corretamente
         searchInput.sendKeys(Keys.ENTER);
-
 
         WebElement resultElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".result-row"))); // Substitua pelo seletor correto
         assertNotNull("Resultados não exibidos para o CPF formatado!", resultElement);

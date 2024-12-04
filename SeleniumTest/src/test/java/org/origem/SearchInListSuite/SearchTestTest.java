@@ -21,62 +21,79 @@ import org.openqa.selenium.Keys;
 import java.util.*;
 import java.net.MalformedURLException;
 import java.net.URL;
-public class SearchTestTest {
+
+public class SearchTestTest 
+{
   private WebDriver driver;
   private Map<String, Object> vars;
   JavascriptExecutor js;
+
   @Before
-  public void setUp() {
+  public void setUp() 
+  {
     driver = new ChromeDriver();
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
   }
+
   @After
-  public void tearDown() {
+  public void tearDown() 
+  {
     driver.quit();
   }
+
   @Test
-  public void searchTest() {
+  public void searchTest() 
+  {
     driver.get("http://devhub.dev.br/");
     {
       List<WebElement> elements = driver.findElements(By.xpath("//td[contains(.,\'123.123.123-60\')]"));
       assert(elements.size() > 0);
     }
+
     driver.findElement(By.id("iPesquisa")).click();
     driver.findElement(By.id("iPesquisa")).sendKeys("123.123.123-50");
     driver.findElement(By.cssSelector("#pessoas > button")).click();
     driver.findElement(By.cssSelector("main")).click();
     driver.findElement(By.cssSelector("#pessoas img")).click();
+
     {
       WebElement element = driver.findElement(By.cssSelector("#pessoas img"));
       Actions builder = new Actions(driver);
       builder.moveToElement(element).perform();
     }
+
     {
       WebElement element = driver.findElement(By.tagName("body"));
       Actions builder = new Actions(driver);
       builder.moveToElement(element, 0, 0).perform();
     }
+
     driver.findElement(By.cssSelector("#pessoas > button")).click();
+
     {
       List<WebElement> elements = driver.findElements(By.xpath("//p[contains(.,\'Nenhuma pessoa encontrada!\')]"));
       assert(elements.size() > 0);
     }
+
     driver.findElement(By.id("iPesquisa")).click();
     driver.findElement(By.id("iPesquisa")).sendKeys("123.123.123-60");
     driver.findElement(By.id("iPesquisa")).click();
     driver.findElement(By.cssSelector("main")).click();
     driver.findElement(By.cssSelector("#pessoas > button")).click();
+
     {
       WebElement element = driver.findElement(By.cssSelector("#pessoas > button"));
       Actions builder = new Actions(driver);
       builder.moveToElement(element).perform();
     }
+
     {
       WebElement element = driver.findElement(By.tagName("body"));
       Actions builder = new Actions(driver);
       builder.moveToElement(element, 0, 0).perform();
     }
+    
     {
       WebDriverWait wait = new WebDriverWait(driver, 30);
       wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//p[contains(.,\'1 pessoas encontradas!\')]")));
