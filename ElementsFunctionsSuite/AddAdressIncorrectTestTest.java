@@ -72,6 +72,10 @@ public class AddAdressIncorrectTestTest {
       List<WebElement> elements = driver.findElements(By.xpath("//li[contains(.,\'emailerrado@@@@@.com\')]"));
       assert(elements.size() == 0);
     }
+<<<<<<< HEAD:ElementsFunctionsSuite/AddAdressIncorrectTestTest.java
+=======
+
+>>>>>>> 77e4bb62d06e254e0ccde75c1ee82fdd287cd24a:SeleniumTest/src/test/java/org/origem/ElementsFunctionsSuite/AddAdressIncorrectTestTest.java
     {
       List<WebElement> elements = driver.findElements(By.xpath("//li[contains(.,\'emailincorreto!@#%!%%$#@%¨#$%\')]"));
 

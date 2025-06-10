@@ -6,8 +6,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.origem.TestHome.Home;
-import org.origem.testCadastro.Cadastro;
+import org.origem.InterfaceSuite.TestHome.Home;
+import org.origem.InsertElementInListSuite.testCadastro.Cadastro;
 
 import java.time.Duration;
 
@@ -26,8 +26,8 @@ public class SeleniumTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get("https://devhub.dev.br/");
 
-       home = new Home(driver);
-       cadastro = new Cadastro(driver);
+        home = new Home(driver);
+        cadastro = new Cadastro(driver);
     }
 
 

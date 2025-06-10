@@ -88,6 +88,10 @@ public class AddAdressTestTest {
       Actions builder = new Actions(driver);
       builder.moveToElement(element).release().perform();
     }
+<<<<<<< HEAD:ElementsFunctionsSuite/AddAdressTestTest.java
+=======
+
+>>>>>>> 77e4bb62d06e254e0ccde75c1ee82fdd287cd24a:SeleniumTest/src/test/java/org/origem/ElementsFunctionsSuite/AddAdressTestTest.java
     {
       List<WebElement> elements = driver.findElements(By.xpath("//td[contains(.,\'email@certinho\')]"));
       assert(elements.size() > 0);

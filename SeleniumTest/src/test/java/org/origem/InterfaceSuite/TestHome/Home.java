@@ -1,4 +1,4 @@
-package org.origem.TestHome;
+package SeleniumTest.src.test.java.org.origem.InterfaceSuite.TestHome;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
