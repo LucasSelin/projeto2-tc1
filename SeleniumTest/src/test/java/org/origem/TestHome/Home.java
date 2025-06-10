@@ -36,9 +36,10 @@ public class Home {
         WebElement botao = driver.findElement(By.tagName("button"));
         botao.click();
 
+        WebElement imagem = botao.findElement(By.tagName("img"));
 
-        WebElement notificacao = new WebDriverWait(driver, Duration.ofSeconds(15))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.className("notificacao")));
+        WebElement notificacao = new WebDriverWait(driver, Duration.ofSeconds(10))
+                .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("notificacao ")));
 
         if (!notificacao.isDisplayed()) {
             throw new IllegalStateException("A notificação não foi exibida após o cadastro.");
@@ -51,16 +52,5 @@ public class Home {
 
          // Aguardar para verificar se o redirecionamento ocorreu
          Assertions.assertTrue(driver.getCurrentUrl().contains("login"));
-     }
-
-     public void ExcluirCadastro() {
-
-         WebElement deletarBotao = driver.findElement(By.cssSelector("img[alt='Lixeira - deletar']"));
-         deletarBotao.click();
-
-         WebElement notificacao = driver.findElement(By.className("notificacao"));
-        Assertions.assertTrue(notificacao.isDisplayed());
-
-
      }
 }
